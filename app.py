@@ -8,9 +8,11 @@ from tensorflow import keras
 import copy
 import itertools
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)
+port = int(os.getenv('PORT', 5000))
 
 # Load the saved model from file
 model = keras.models.load_model("model.h5")
