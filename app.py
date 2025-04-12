@@ -69,4 +69,5 @@ def predict():
     return jsonify({'label': 'No hand detected'})
 
 if __name__ == '__main__':
+    print("Running Flask app...")
     app.run(debug=True, port=5001)

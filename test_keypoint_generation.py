@@ -52,20 +52,19 @@ def pre_process_landmark(landmark_list):
     return temp_landmark_list
 
 def logging_csv(letter, landmark_list):
-    csv_path = 'keypoint_copy.csv'
+    csv_path = 'test_keypoint.csv'
     with open(csv_path, 'a', newline="") as f:
         writer = csv.writer(f)
         writer.writerow([letter, *landmark_list])
 
 
 print("Start processing images...")
-alphabet = list(string.ascii_uppercase)
-alphabet +=  ['1','2','3','4','5','6','7','8','9']
+alphabet =  ['1','2','3','4','5', '6', '9', 'A', 'D', 'L', 'W', 'Z']
 # For static images:
 address = 'images/data/'
 IMAGE_FILES = []
 for i in alphabet:
-  for j in range(1199):
+  for j in range(1, 10):
     IMAGE_FILES.append(address+i+'/'+str(j)+'.jpg')
 with mp_hands.Hands(
     static_image_mode=True,
